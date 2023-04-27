@@ -345,6 +345,7 @@ p {
 		position: relative;
 		overflow: hidden;
 		text-align: center;
+		justify-content: center;
 	}
 }
 
