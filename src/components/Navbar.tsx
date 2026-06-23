@@ -22,6 +22,7 @@ export default function Navbar() {
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const [open, setOpen] = useState(false);
   const scrolled = useScrollTrigger({ disableHysteresis: true, threshold: 10 });
+  const resumeHref = `${import.meta.env.BASE_URL}Alvin_Ndungu_CV.pdf`;
 
   const handleNav = (href: string) => {
     setOpen(false);
@@ -68,7 +69,7 @@ export default function Navbar() {
                   {link.label}
                 </Typography>
               ))}
-              <Button variant="contained" color="primary" href="/Alvin_Ndungu_CV.pdf" download>
+              <Button variant="contained" color="primary" href={resumeHref} download>
                 Download CV
               </Button>
             </Stack>
@@ -92,8 +93,8 @@ export default function Navbar() {
             </ListItem>
           ))}
           <ListItem sx={{ mt: 1 }}>
-            <Button fullWidth variant="contained" color="primary" href="/Alvin_Ndungu_CV.pdf" download>
-              Download CV
+            <Button component="a" color="primary" size="large" href={resumeHref} download>
+              Download Resume
             </Button>
           </ListItem>
         </List>

@@ -17,7 +17,7 @@ import { profile } from "../data/content";
  * render behind the hero content, fading out smoothly as the user
  * scrolls down the page.
  */
-const HERO_BG_URL = "/hero.png";
+const HERO_BG_URL = `${import.meta.env.BASE_URL}hero.png`;
 
 export default function Hero() {
   const [opacity, setOpacity] = useState(1);
@@ -38,7 +38,7 @@ export default function Hero() {
       component="section"
       sx={{
         position: "relative",
-        minHeight: { xs: "auto", md: "110vh" },
+        minHeight: { xs: "100vh", md: "110vh" },
         display: "flex",
         alignItems: "center",
         pt: { xs: 16, md: 0 },
@@ -108,7 +108,7 @@ export default function Hero() {
             <Button variant="outlined" color="secondary" size="large" href="#contact">
               Get in Touch
             </Button>
-            <Button variant="text" color="primary" size="large" href="/Alvin_Ndungu_CV.pdf" download>
+            <Button variant="text" color="primary" size="large" href={`${import.meta.env.BASE_URL}Alvin_Ndungu_CV.pdf`} download>
               Download Resume
             </Button>
           </Stack>
